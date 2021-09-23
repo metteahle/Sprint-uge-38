@@ -1,0 +1,79 @@
+/**
+ * projekt: Flexbox tutorial
+ * fil: css/style.css
+ **/
+
+/* Google fonts (NB: load før :root) */
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+/* font-family: 'Luckiest Guy', cursive; */
+
+/* Variabler: genbruges og gør designvalg enkle */
+:root {
+  /* farver */
+  --blue: #1e90ff;
+  --white: #ffffff;
+  --orange: #f28a13;
+
+  /* fonte */
+  --font: 'Trebuchet MS', sans-serif; /* brødtekst */
+  --displayH: 'Luckiest Guy', cursive; /* overskrifter */
+
+  /* teksturer ("fliselagte baggrunde", eng. seamless image) */
+  --stars: url('../images/258px-StarfieldSimulation004.gif');
+  /* Animation from Wikipedia: https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/StarfieldSimulation004.gif/258px-StarfieldSimulation004.gif */
+}
+
+/* Her bruges en variabel: --blue */
+body {
+  background-color: var(--blue);
+  font-family: var(--font);
+}
+
+/* Typografi */
+h1, h2 {
+  color: var(--white);
+  text-align: center;
+  font-family: var(--displayH);
+  padding-bottom: 20px;
+}
+
+/* Sætter en baggrund */
+header, footer {
+  background-image: var(--stars);
+  min-height: 150px;
+}
+
+/* Layout: Flexbox */
+/* tutorial: https://css-tricks.com/snippets/css/a-guide-to-flexbox */
+
+#content {
+  display: flex; /* får indholdet i containeren til at flexe */
+  justify-content: space-evenly; /* se andre muligheder i tutorialen */
+}
+
+aside {
+  width: 250px; /* giv elementerne en bredde */
+  background-color: var(--orange);
+  padding: 2rem;
+}
+
+main {
+  padding: 12px;
+  width: 65%; /* do. */
+}
+
+/*
+  Løsnig: rækker med produkter.
+  Se filen: row-sample.html.
+*/
+.raekke {
+  display: flex;
+}
+
+.produkt {
+  width: 30%;
+}
+
+.produkt img {
+  width: 100%;
+}
